@@ -1,0 +1,20 @@
+/**
+ * Custom implementation of the map function.
+ * @param {any[]} arr - The array to map over.
+ * @param {Function} fn - The function to apply to each element.
+ * @return {any[]} - A new array with the results.
+ */
+function map(arr, fn) {
+    const result = [];
+    for (let i = 0; i < arr.length; i++) {
+        result.push(fn(arr[i], i, arr));
+    }
+    return result;
+}
+
+// Example usage:
+const arr = [1, 2, 3];
+const square = (x) => x * x;
+const result = map(arr, square);
+
+console.log(result); // Output: [1, 4, 9]
